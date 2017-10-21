@@ -1,0 +1,5 @@
+D:\prog`s\C#\Coin_Diffusion\Coin_Diffusion\bin\Debug\Coin_Diffusion.exe.config
+D:\prog`s\C#\Coin_Diffusion\Coin_Diffusion\bin\Debug\Coin_Diffusion.exe
+D:\prog`s\C#\Coin_Diffusion\Coin_Diffusion\bin\Debug\Coin_Diffusion.pdb
+D:\prog`s\C#\Coin_Diffusion\Coin_Diffusion\obj\Debug\Coin_Diffusion.exe
+D:\prog`s\C#\Coin_Diffusion\Coin_Diffusion\obj\Debug\Coin_Diffusion.pdb
