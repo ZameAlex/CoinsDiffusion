@@ -36,7 +36,10 @@ namespace Coin_Diffusion
             }
             return true;
         }
-
+		/// <summary>
+		/// Main loop of transition
+		/// </summary>
+		/// <returns>Dictionary, where key is name of the country, value is days to full it</returns>
         public Dictionary<string,int> CountDuration()
         {
             Dictionary<string, int> countriesDuration = new Dictionary<string, int>();
@@ -44,10 +47,7 @@ namespace Coin_Diffusion
             {
                 foreach(var country in Countries)
                 {
-                    if (item.Country == country)
-                        item.Coins.Add(country, 1000000);
-                    else
-                        item.Coins.Add(country, 0);
+					item.Coins.Add(country, (item.Country == country) ? 1000000 : 0);
                     item.FillTransaction(country, 0);
                 }
             }
@@ -68,11 +68,8 @@ namespace Coin_Diffusion
                 {
                     if (!CheckCountry(country))
                         allCountriesCompleted = false;
-                    else
-                    {
-                        if(!countriesDuration.ContainsKey(country))
+					else if(!countriesDuration.ContainsKey(country))
                         countriesDuration.Add(country, count+1);
-                    }
                 }
                 count++;
             }

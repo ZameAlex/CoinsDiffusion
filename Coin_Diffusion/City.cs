@@ -23,7 +23,10 @@ namespace Coin_Diffusion
             Transactions = new List<Transaction>();
             Coins = new Dictionary<string, int>();
         }
-
+		/// <summary>
+		/// Linked city with it`s neighbour
+		/// </summary>
+		/// <param name="Neighbour"></param>
         public void MakeLinkWithNeighbours(City Neighbour)
         {
             Transaction newTransaction = new Transaction();
@@ -35,7 +38,11 @@ namespace Coin_Diffusion
             receiverTransaction.values = new Dictionary<string, int>();
             Neighbour.Transactions.Add(receiverTransaction);
         }
-
+		/// <summary>
+		/// First filling of each transaction 
+		/// </summary>
+		/// <param name="type">Type of coin</param>
+		/// <param name="value">Value of coin</param>
         public void FillTransaction(string type,int value)
         {
             foreach(var item in Transactions)
@@ -43,7 +50,9 @@ namespace Coin_Diffusion
                item.values.Add(type, value);
             }
         }
-
+		/// <summary>
+		/// Calculate money for transaction
+		/// </summary>
         public void PrepareTransaction()
         {
             foreach(var coin in Coins)
@@ -52,6 +61,9 @@ namespace Coin_Diffusion
                     transaction.values[coin.Key] = coin.Value / 1000;
             }
         }
+		/// <summary>
+		/// Execute transactions of each city
+		/// </summary>
         public void MakeTransaction()
         {
             foreach(var transaction in Transactions)

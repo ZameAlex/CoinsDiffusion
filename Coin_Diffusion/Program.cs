@@ -48,6 +48,7 @@ namespace Coin_Diffusion
         {
             StreamReader reader = new StreamReader("testCases.txt");
             int count = 0;
+			int hashRatio = 10;
             while (!reader.EndOfStream)
             {
                 List<City> cities = new List<City>();
@@ -96,11 +97,11 @@ namespace Coin_Diffusion
                             for (int k = item.x1; k <= item.x2; k++)
                                 for (int j = item.y1; j <= item.y2; j++)
                                 {
-                                    int xNeighbour = (k - 1) * 10 + j;
-                                    int yNeighbour = k * 10 + j - 1;
+                                    int xNeighbour = (k - 1) * hashRatio + j;
+                                    int yNeighbour = k * hashRatio + j - 1;
                                     var city = new City(k, j, item.Name);
                                     cities.Add(city);
-                                    table.Add(k * 10 + j, city);
+                                    table.Add(k * hashRatio + j, city);
                                     if (table.Contains(yNeighbour))
                                         city.MakeLinkWithNeighbours(table[yNeighbour] as City);
                                     if (table.Contains(xNeighbour))
