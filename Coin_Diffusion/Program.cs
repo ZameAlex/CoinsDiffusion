@@ -44,7 +44,7 @@ namespace Coin_Diffusion
         static void Main(string[] args)
         {
             StreamReader reader = new StreamReader("testCases.txt");
-            int count = 0;
+            const int count = 0;
 			int hashRatio = 10;
             while (!reader.EndOfStream)
             {

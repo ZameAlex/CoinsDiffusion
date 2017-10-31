@@ -42,12 +42,13 @@ namespace Coin_Diffusion
 		/// <returns>Dictionary, where key is name of the country, value is days to full it</returns>
         public Dictionary<string,int> CountDuration()
         {
+			const int startValue = 1000000;
             Dictionary<string, int> countriesDuration = new Dictionary<string, int>();
             foreach(var item in Cities)
             {
                 foreach(var country in Countries)
                 {
-					item.Coins.Add(country, (item.Country == country) ? 1000000 : 0);
+					item.Coins.Add(country, (item.Country == country) ? startValue : 0);
                     item.FillTransaction(country, 0);
                 }
             }
