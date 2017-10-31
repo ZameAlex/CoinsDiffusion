@@ -25,10 +25,7 @@ namespace Coin_Diffusion
                         return 1;
                     else
                     {
-                        if (this.x1 < second.x1)
-                            return -1;
-                        else
-                            return 1;
+						return (this.x1 < second.x1) ? -1 : 1;
                     }
                 }
             }
